@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, 'Segoe UI', sans-serif; }
+  body {
+    background: #FFFFFF;
+    color: #002E6E;
+    width: 1200px;
+    height: 380px;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #002E6E;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #002E6E;
+  }
+  .header h1 span {
+    color: #00BAF2;
+  }
+  .header .badge {
+    background: #EEF2F6;
+    border: 1px solid #D5DCE4;
+    color: #002E6E;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 215px 235px 215px 235px 215px;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .col-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #5A6E85;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #D5DCE4;
+  }
+
+  .card {
+    background: #EEF2F6;
+    border: 1px solid #D5DCE4;
+    border-radius: 5px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #002E6E;
+    margin-bottom: 3px;
+  }
+  .card-desc {
+    font-size: 11px;
+    color: #2D3748;
+    line-height: 1.35;
+  }
+
+  .card-guardrail {
+    background: #F0F9FF;
+    border: 1.5px solid #00BAF2;
+    border-radius: 5px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+  }
+  .card-guardrail .card-title {
+    color: #002E6E;
+  }
+  .guardrail-tag {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #00BAF2;
+    color: #FFFFFF;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  .bottom-bar {
+    background: #EEF2F6;
+    border: 1px solid #D5DCE4;
+    border-radius: 5px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #002E6E;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+  .bottom-pill {
+    color: #0084B4;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Munim System Architecture: <span>End-to-End Pipeline</span></h1>
+  <div class="badge">Zero Numeric Errors in 50 QA Tests • Token-Enforced Guardrails</div>
+</div>
+
+<div class="grid-container">
+  <!-- Col 1: Store Ingestion -->
+  <div class="column">
+    <div class="col-title">1. Store Ingest</div>
+    <div class="card">
+      <div class="card-title">UPI Stream</div>
+      <div class="card-desc">Simulated transaction events with timestamp, amount, and customer hash.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Daily Input</div>
+      <div class="card-desc">Voice transcript or typed text for cash sales, vendor expenses, and udhaar.</div>
+    </div>
+  </div>
+
+  <!-- Col 2: Analytics -->
+  <div class="column">
+    <div class="col-title">2. Analytics Core</div>
+    <div class="card">
+      <div class="card-title">Item Inference</div>
+      <div class="card-desc">Menu and combo clustering directly from payment amount frequencies.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Bahi-Khata Ledger</div>
+      <div class="card-desc">Deterministic daily profit computation and udhaar ledger with tone choice.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Munim Score</div>
+      <div class="card-desc">5-factor behavioral health signal for underwriting enrichment.</div>
+    </div>
+  </div>
+
+  <!-- Col 3: Decision Engine -->
+  <div class="column">
+    <div class="col-title">3. Decision Engine</div>
+    <div class="card">
+      <div class="card-title">Agentic Reasoning</div>
+      <div class="card-desc">Zero-shot LLM planner with strict tool schema and deterministic math.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Proactive Triggers</div>
+      <div class="card-desc">Rush-hour alerts and overdue payment reminders pushed autonomously.</div>
+    </div>
+  </div>
+
+  <!-- Col 4: Action Guardrails -->
+  <div class="column">
+    <div class="col-title" style="color: #0084B4;">4. Action Guardrails</div>
+    <div class="card-guardrail">
+      <span class="guardrail-tag">Mandatory</span>
+      <div class="card-title">Merchant Approval</div>
+      <div class="card-desc">Actions require explicit confirmation on phone screen before execution.</div>
+    </div>
+    <div class="card-guardrail">
+      <div class="card-title">Runtime Token Lock</div>
+      <div class="card-desc">Single-use token generated per request; direct adapter access blocked.</div>
+    </div>
+  </div>
+
+  <!-- Col 5: Adapters & Audit -->
+  <div class="column">
+    <div class="col-title">5. Adapters & Audit</div>
+    <div class="card">
+      <div class="card-title">Output-Only Soundbox</div>
+      <div class="card-desc">Hinglish speech audio directing merchant: "Phone pe approve kar dijiye".</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Mocked Channels</div>
+      <div class="card-desc">Simulated WhatsApp messages and UPI payment collect requests.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Append-Only Audit Log</div>
+      <div class="card-desc">Every action, approval, and execution logged with UTC timestamp.</div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div>ENFORCEMENT: <span class="bottom-pill">Direct adapter calls without valid runtime token raise PermissionError (verified in unit tests)</span></div>
+  <div>Munim Architecture • Paytm AI Partner Hackathon</div>
+</div>
+
+</body>
+</html>

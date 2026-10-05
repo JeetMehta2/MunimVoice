@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    color: #0F172A;
+    padding: 34px 60px 28px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .team-badge {
+    background: #EEF2FF;
+    border: 1.5px solid #6366F1;
+    border-radius: 28px;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1E1B4B;
+  }
+  .hackathon-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #002E6E;
+  }
+  .slide-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #002E6E;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    flex: 1;
+  }
+  .ref-col {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ref-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #002E6E;
+    padding-bottom: 8px;
+  }
+  .ref-num {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 6px;
+  }
+  .ref-h {
+    font-size: 16px;
+    font-weight: 800;
+    color: #002E6E;
+    text-transform: uppercase;
+  }
+  .card-item {
+    background: #FFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-item-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #002E6E;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-item-desc {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .metric-badge {
+    display: inline-block;
+    background: #ECFDF5;
+    border: 1px solid #10B981;
+    color: #065F46;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+    align-self: flex-start;
+  }
+  .status-pill {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .status-pill.blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #93C5FD; }
+  .status-pill.green { background: #ECFDF5; color: #047857; border: 1px solid #6EE7B7; }
+  .status-pill.purple { background: #F5F3FF; color: #6D28D9; border: 1px solid #C4B5FD; }
+  .status-pill.amber { background: #FFFBEB; color: #B45309; border: 1px solid #FCD34D; }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 700;
+  }
+  .page-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 14px;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="team-badge">Team Munim</div>
+    <div class="hackathon-title">PAYTM AI PARTNER HACKATHON 2026</div>
+  </div>
+
+  <div class="slide-title">RESEARCH, EVALUATION & BENCHMARK VERIFICATION</div>
+
+  <div class="main-layout">
+    <!-- Col 1: Benchmarks -->
+    <div class="ref-col">
+      <div class="ref-head">
+        <div class="ref-num">1</div>
+        <div class="ref-h">Empirical Benchmarks</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">50-Question Hinglish QA Benchmark</div>
+        <div class="card-item-desc">Evaluates tool mapping and financial accuracy across financial queries.</div>
+        <div class="metric-badge">0 Numeric Errors (100% Hallucination Free)</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">30-Phrase Hinglish Voice Benchmark</div>
+        <div class="card-item-desc">Tests extraction of complex multi-item cash expenses and udhaar phrases.</div>
+        <div class="metric-badge">27 of 30 Accurately Parsed (90.0%)</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">Item Inference Dual Evaluation</div>
+        <div class="card-item-desc">Compares clean baseline against adversarial hard-case stress test.</div>
+        <div class="metric-badge">Easy F1: 1.0 | Hard Stress Test F1: 0.588</div>
+      </div>
+
+      <div class="card-item" style="background: #F0FDF4; border: 1.5px solid #10B981;">
+        <div class="card-item-title" style="color: #065F46;">Zero Math Hallucination Verification</div>
+        <div class="card-item-desc">Mathematical calculations (profit, margin, credit score) are 100% isolated in deterministic Python arithmetic.</div>
+      </div>
+    </div>
+
+    <!-- Col 2: Principles -->
+    <div class="ref-col">
+      <div class="ref-head">
+        <div class="ref-num" style="background: #0284C7;">2</div>
+        <div class="ref-h">Regulatory & Safety Rules</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">RBI Digital Lending Boundary <span class="status-pill blue">Compliant</span></div>
+        <div class="card-item-desc">Munim Score operates strictly as an alternative behavioral signal to enrich underwriting, not as a licensed credit decision.</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">Commercial Hardware Constraint <span class="status-pill green">Verified</span></div>
+        <div class="card-item-desc">Complies with real-world Soundbox specs: output-only speaker. Prevents expensive hardware redesigns.</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">Append-Only Audit Integrity <span class="status-pill purple">Enforced</span></div>
+        <div class="card-item-desc">Every action, approval, and mock adapter call is permanently stored with timestamps in SQLite.</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">Single-Use Token Security <span class="status-pill amber">Protected</span></div>
+        <div class="card-item-desc">External actions require cryptographic single-use tokens generated only upon explicit merchant mobile tap.</div>
+      </div>
+    </div>
+
+    <!-- Col 3: Roadmap -->
+    <div class="ref-col">
+      <div class="ref-head">
+        <div class="ref-num" style="background: #10B981;">3</div>
+        <div class="ref-h">Immediate Roadmap</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">1. Live WebSpeech Browser Mic Input <span class="status-pill green">Q2 2026</span></div>
+        <div class="card-item-desc">Integrate direct in-browser microphone capture into Bahi-Khata view to supplement typed text.</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">2. Multi-Regional Language Neural TTS <span class="status-pill blue">Q3 2026</span></div>
+        <div class="card-item-desc">Expand neural audio beyond Hindi to Tamil, Telugu, Marathi, and Bengali for nationwide merchant coverage.</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">3. Production Paytm Soundbox MQTT Hub <span class="status-pill purple">Q3 2026</span></div>
+        <div class="card-item-desc">Direct bridge to Paytm's live IoT message bus for enterprise-scale countertop deployment.</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-item-title">4. Real-time NBFC Credit Bureau Sync <span class="status-pill amber">Q4 2026</span></div>
+        <div class="card-item-desc">Syndication pipeline to feed Munim Score telemetry directly to licensed institutional lending partners.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-footer">
+    <div>@Paytm AI Partner Hackathon 2026 — Idea Submission Template</div>
+    <div class="page-pill">7</div>
+  </div>
+</body>
+</html>

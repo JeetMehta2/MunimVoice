@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    color: #0F172A;
+    padding: 44px 70px 40px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .team-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #EEF2FF;
+    border: 2px solid #6366F1;
+    border-radius: 36px;
+    padding: 8px 24px;
+  }
+  .team-badge .logo-icon {
+    width: 38px;
+    height: 38px;
+    background: #6366F1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 900;
+    font-size: 18px;
+  }
+  .team-badge .text {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E1B4B;
+  }
+  .hackathon-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #002E6E;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hackathon-title .badge-paytm {
+    background: #00BAF2;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 6px;
+  }
+  .center-title-area {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .main-title {
+    font-size: 64px;
+    font-weight: 900;
+    color: #002E6E;
+    letter-spacing: -1px;
+  }
+  .main-title span {
+    color: #00BAF2;
+  }
+  .main-tagline {
+    font-size: 24px;
+    font-weight: 700;
+    color: #475569;
+    margin-top: 6px;
+  }
+  .main-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex: 1;
+    margin: 20px 0;
+  }
+  .specs-box {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .spec-item {
+    display: flex;
+    font-size: 23px;
+    line-height: 1.4;
+    color: #1E293B;
+  }
+  .spec-label {
+    font-weight: 800;
+    color: #002E6E;
+    min-width: 290px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .spec-label::before {
+    content: "•";
+    color: #00BAF2;
+    font-size: 32px;
+    line-height: 0;
+  }
+  .spec-val {
+    font-weight: 600;
+    color: #334155;
+  }
+  .graphic-area {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .emblem-card {
+    background: #F8FAFC;
+    border: 3px solid #00BAF2;
+    border-radius: 28px;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 16px 36px rgba(0, 46, 110, 0.08);
+    position: relative;
+  }
+  .emblem-icon-circle {
+    width: 130px;
+    height: 130px;
+    background: linear-gradient(135deg, #002E6E 0%, #00BAF2 100%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    box-shadow: 0 10px 24px rgba(0, 186, 242, 0.35);
+    margin-bottom: 20px;
+  }
+  .emblem-icon-text {
+    font-size: 40px;
+    font-weight: 900;
+  }
+  .emblem-sub {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .emblem-h {
+    font-size: 26px;
+    font-weight: 900;
+    color: #002E6E;
+    margin-bottom: 8px;
+  }
+  .emblem-desc {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #E2E8F0;
+    padding-top: 14px;
+    font-size: 16px;
+    color: #64748B;
+    font-weight: 700;
+  }
+  .page-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 4px 18px;
+    border-radius: 16px;
+  }
+</style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="team-badge">
+      <div class="logo-icon">M</div>
+      <div class="text">Team Munim</div>
+    </div>
+    <div class="hackathon-title">
+      PAYTM AI PARTNER HACKATHON 2026
+      <span class="badge-paytm">THEME 1</span>
+    </div>
+  </div>
+
+  <div class="center-title-area">
+    <div class="main-title">Munim <span>(मुनीम)</span></div>
+    <div class="main-tagline">Voice-First AI Business Partner for Small Indian Merchants</div>
+  </div>
+
+  <div class="main-body">
+    <div class="specs-box">
+      <div class="spec-item">
+        <div class="spec-label">Problem Theme</div>
+        <div class="spec-val">Build the AI Business Partner for Every Paytm Merchant</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Target Persona</div>
+        <div class="spec-val">Ramesh, Chai & Snacks Stall (Jaipur) — High-Volume Micro-Merchant</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Delivery Channels</div>
+        <div class="spec-val">Simulated 5G Soundbox (Ambient Audio) + Mobile Web App (Touch Actions)</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Safety Contract</div>
+        <div class="spec-val">Deterministic Python Analytics • Merchant Approval Gate • Runtime Token Lock</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Solution Category</div>
+        <div class="spec-val">Autonomous Applied-AI Agent & Real-Time Financial Copilot</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Team Name</div>
+        <div class="spec-val">Team Munim</div>
+      </div>
+    </div>
+
+    <div class="graphic-area">
+      <div class="emblem-card">
+        <div class="emblem-icon-circle">
+          <div class="emblem-icon-text">AI</div>
+          <div class="emblem-sub">SOUNDBOX</div>
+        </div>
+        <div class="emblem-h">Autonomous Growth Loop</div>
+        <div class="emblem-desc">Understand UPI Streams • Proactive Audio Briefs<br>1-Tap Phone Approval • Verified Impact</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-footer">
+    <div>@Paytm AI Partner Hackathon 2026 — Idea Submission Template</div>
+    <div class="page-pill">1</div>
+  </div>
+</body>
+</html>

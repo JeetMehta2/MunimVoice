@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    color: #0F172A;
+    padding: 34px 60px 28px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .team-badge {
+    background: #EEF2FF;
+    border: 1.5px solid #6366F1;
+    border-radius: 28px;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1E1B4B;
+  }
+  .hackathon-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #002E6E;
+  }
+  .slide-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #002E6E;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .slide-sub {
+    font-size: 17px;
+    color: #64748B;
+    text-align: center;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  /* 5 Acts Timeline Grid */
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    flex: 1;
+  }
+  .act-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .act-card.highlight {
+    background: #F0F9FF;
+    border: 2px solid #00BAF2;
+  }
+  .act-card.green {
+    background: #ECFDF5;
+    border: 2px solid #10B981;
+  }
+  .act-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .act-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+  .act-time {
+    font-size: 13px;
+    font-weight: 800;
+    color: #64748B;
+  }
+  .act-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #002E6E;
+    margin-bottom: 8px;
+  }
+  .act-img-wrap {
+    height: 380px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #FFF;
+    border: 1px solid #CBD5E1;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .act-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .act-bullets {
+    font-size: 12px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .act-bullets li {
+    margin-left: 16px;
+    margin-bottom: 4px;
+  }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 700;
+  }
+  .page-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 14px;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="team-badge">Team Munim</div>
+    <div class="hackathon-title">PAYTM AI PARTNER HACKATHON 2026</div>
+  </div>
+
+  <div class="slide-title">DEMONSTRATION SCENARIO: A Day in the Life of Ramesh</div>
+  <div class="slide-sub">5-Act End-to-End Operational Journey Executed on Seeded Synthetic Data in 3 Minutes</div>
+
+  <div class="timeline-grid">
+    <!-- Act 1 -->
+    <div class="act-card">
+      <div>
+        <div class="act-header">
+          <div class="act-pill">ACT 1</div>
+          <div class="act-time">08:00 AM</div>
+        </div>
+        <div class="act-title">Morning Briefing</div>
+        <div class="act-img-wrap">
+          <img src="file:///C:/Users/jeetm/.gemini/antigravity/scratch/munim/deck/assets/soundbox_device.png" alt="Morning Brief">
+        </div>
+      </div>
+      <ul class="act-bullets">
+        <li>Soundbox plays Hinglish neural TTS briefing.</li>
+        <li>Announces daily sales target and yesterday's net cash profit.</li>
+        <li>Suggests milk stocking based on volume forecast.</li>
+      </ul>
+    </div>
+
+    <!-- Act 2 -->
+    <div class="act-card">
+      <div>
+        <div class="act-header">
+          <div class="act-pill" style="background: #0284C7;">ACT 2</div>
+          <div class="act-time">12:30 PM</div>
+        </div>
+        <div class="act-title">Rush Surge Warning</div>
+        <div class="act-img-wrap">
+          <img src="file:///C:/Users/jeetm/.gemini/antigravity/scratch/munim/deck/assets/what_i_sell.png" alt="What I Sell">
+        </div>
+      </div>
+      <ul class="act-bullets">
+        <li>Footfall detector identifies +2.8σ volume surge.</li>
+        <li>Alerts counter: "Chai aur bun maska tayyar rakhein".</li>
+        <li>Explicitly suppresses discounts to protect margin.</li>
+      </ul>
+    </div>
+
+    <!-- Act 3 -->
+    <div class="act-card highlight">
+      <div>
+        <div class="act-header">
+          <div class="act-pill" style="background: #00BAF2;">ACT 3</div>
+          <div class="act-time">04:30 PM</div>
+        </div>
+        <div class="act-title">Bahi-Khata Ritual</div>
+        <div class="act-img-wrap">
+          <img src="file:///C:/Users/jeetm/.gemini/antigravity/scratch/munim/deck/assets/bahi_khata.png" alt="Bahi Khata">
+        </div>
+      </div>
+      <ul class="act-bullets">
+        <li>Ramesh speaks/types: "Doodh 500 aur cheeni 200".</li>
+        <li>Parser extracts entries with 90% benchmark accuracy.</li>
+        <li>Instantly recalculates True Daily Net Profit.</li>
+      </ul>
+    </div>
+
+    <!-- Act 4 -->
+    <div class="act-card highlight">
+      <div>
+        <div class="act-header">
+          <div class="act-pill" style="background: #6366F1;">ACT 4</div>
+          <div class="act-time">06:00 PM</div>
+        </div>
+        <div class="act-title">Udhaar Recovery</div>
+        <div class="act-img-wrap">
+          <img src="file:///C:/Users/jeetm/.gemini/antigravity/scratch/munim/deck/assets/home.png" alt="Home Approval">
+        </div>
+      </div>
+      <ul class="act-bullets">
+        <li>Overdue customer credit flagged on mobile.</li>
+        <li>Merchant picks Polite tone & taps "Approve".</li>
+        <li>Mock WhatsApp payment collect link dispatched.</li>
+      </ul>
+    </div>
+
+    <!-- Act 5 -->
+    <div class="act-card green">
+      <div>
+        <div class="act-header">
+          <div class="act-pill" style="background: #10B981;">ACT 5</div>
+          <div class="act-time">09:00 PM</div>
+        </div>
+        <div class="act-title">Measure Uplift</div>
+        <div class="act-img-wrap">
+          <img src="file:///C:/Users/jeetm/.gemini/antigravity/scratch/munim/deck/assets/munim_score.png" alt="Munim Score">
+        </div>
+      </div>
+      <ul class="act-bullets">
+        <li>Evaluates Tuesday combo offer uplift.</li>
+        <li>Result: +21.4% revenue (Illustrative in simulation).</li>
+        <li>Munim Score updates with higher discipline rank.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom-footer">
+    <div>@Paytm AI Partner Hackathon 2026 — Idea Submission Template</div>
+    <div class="page-pill">6</div>
+  </div>
+</body>
+</html>

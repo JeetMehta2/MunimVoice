@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    color: #0F172A;
+    padding: 34px 60px 28px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .team-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #EEF2FF;
+    border: 1.5px solid #6366F1;
+    border-radius: 28px;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1E1B4B;
+  }
+  .hackathon-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #002E6E;
+  }
+  .slide-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #002E6E;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .main-layout {
+    display: grid;
+    grid-template-columns: 880px 1fr;
+    gap: 28px;
+    flex: 1;
+  }
+  /* Left Column: 3 Stages */
+  .stages-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .stage-row {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .stage-badge {
+    width: 48px;
+    height: 48px;
+    background: #002E6E;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .stage-content {
+    flex: 1;
+  }
+  .stage-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #002E6E;
+    margin-bottom: 3px;
+  }
+  .stage-desc {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+  .flow-boxes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .flow-box {
+    background: #FFFFFF;
+    border: 1.5px solid #94A3B8;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1E293B;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .flow-box.highlight {
+    background: #F0F9FF;
+    border: 2px solid #00BAF2;
+    color: #002E6E;
+  }
+  .flow-box.green {
+    background: #ECFDF5;
+    border: 2px solid #10B981;
+    color: #065F46;
+  }
+  .flow-arrow {
+    font-size: 18px;
+    font-weight: 800;
+    color: #64748B;
+  }
+  /* Right Column: Prototype Mockup View */
+  .mockup-container {
+    background: #00224D;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 30px rgba(0, 46, 110, 0.25);
+  }
+  .mockup-header {
+    font-size: 14px;
+    font-weight: 800;
+    color: #00BAF2;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .stat-card {
+    background: #001838;
+    border: 1px solid #1A5499;
+    border-radius: 8px;
+    padding: 8px 10px;
+    text-align: center;
+  }
+  .stat-val {
+    font-size: 18px;
+    font-weight: 800;
+    color: #00BAF2;
+  }
+  .stat-lbl {
+    font-size: 10px;
+    color: #94A3B8;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .mockup-img-wrap {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mockup-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  /* Bottom Strip */
+  .bottom-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .pills-group {
+    display: flex;
+    gap: 10px;
+  }
+  .pill-green {
+    background: #ECFDF5;
+    border: 1.5px solid #10B981;
+    color: #065F46;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .feature-cards {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+  }
+  .feat-card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 6px 12px;
+    flex: 1;
+  }
+  .feat-card-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #002E6E;
+  }
+  .feat-card-desc {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 700;
+  }
+  .page-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 14px;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="team-badge">Team Munim</div>
+    <div class="hackathon-title">PAYTM AI PARTNER HACKATHON 2026</div>
+  </div>
+
+  <div class="slide-title">PROPOSAL: Voice-First AI Business Operating Loop for Paytm Merchants</div>
+
+  <div class="main-layout">
+    <!-- Left Column: 3 Stages -->
+    <div class="stages-column">
+      <!-- Stage 1 -->
+      <div class="stage-row">
+        <div class="stage-badge">1</div>
+        <div class="stage-content">
+          <div class="stage-title">Data Ingestion & Menu Discovery (Unsupervised)</div>
+          <div class="stage-desc">Fetches real-time UPI transaction stream and parses daily cash/expense logs. Clusters payment amounts into menu items without POS hardware.</div>
+          <div class="flow-boxes">
+            <div class="flow-box">UPI Stream (MQTT/Webhooks)</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">Daily Khata (Voice/Text)</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box highlight">Item Inference Engine</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box green">Discovered Menu Mix</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="stage-row">
+        <div class="stage-badge" style="background: #0284C7;">2</div>
+        <div class="stage-content">
+          <div class="stage-title">Proactive Store Intelligence & Footfall Analytics</div>
+          <div class="stage-desc">Analyzes hourly transaction volume Z-scores to alert upcoming rush surges, dead-afternoon quiet lulls, and stock replenishment needs.</div>
+          <div class="flow-boxes">
+            <div class="flow-box">Hourly Volume Tracker</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">Z-Score Surge Detector</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box highlight">Soundbox Audio Brief</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box green">Rush Prep & Quiet Offer</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="stage-row">
+        <div class="stage-badge" style="background: #4F46E5;">3</div>
+        <div class="stage-content">
+          <div class="stage-title">Risk Synthesis & Gated Real-World Recovery</div>
+          <div class="stage-desc">Combines udhaar aging records with 1-tap mobile approval. Delivers polite customer collection links and measures campaign uplift.</div>
+          <div class="flow-boxes">
+            <div class="flow-box">Udhaar Aging Tracker</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box highlight">Mobile Approval Card</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">WhatsApp Collect Link</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box green">Audit Log & Uplift</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Prototype Mockup View -->
+    <div class="mockup-container">
+      <div class="mockup-header">INTEGRATED PROTOTYPE VIEW: SOUNDBOX SIMULATOR + PHONE APP</div>
+      <div class="stats-strip">
+        <div class="stat-card">
+          <div class="stat-val">81,273</div>
+          <div class="stat-lbl">Processed Txns</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">0 Errors</div>
+          <div class="stat-lbl">50 QA Math Tests</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">27 / 30</div>
+          <div class="stat-lbl">Voice Extraction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">100%</div>
+          <div class="stat-lbl">Audited Logs</div>
+        </div>
+      </div>
+      <div class="mockup-img-wrap">
+        <img src="file:///C:/Users/jeetm/.gemini/antigravity/scratch/munim/deck/assets/soundbox_split.png" alt="Split Prototype View">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Strip -->
+  <div class="bottom-strip">
+    <div class="pills-group">
+      <div class="pill-green">✓ Zero POS Hardware</div>
+      <div class="pill-green">✓ Instant Morning Brief</div>
+      <div class="pill-green">✓ Margin Protection</div>
+      <div class="pill-green">✓ Audited Execution</div>
+    </div>
+    <div class="feature-cards">
+      <div class="feat-card">
+        <div class="feat-card-title">DETERMINISTIC MATH</div>
+        <div class="feat-card-desc">Zero arithmetic in LLM; profits calculated in Python.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-title">EDGE AMBIENCE</div>
+        <div class="feat-card-desc">Soundbox directs: "Phone pe approve kar dijiye".</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-title">BAYESIAN CONFIRMATION</div>
+        <div class="feat-card-desc">Merchant confirms inferred hypotheses with 1 tap.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-footer">
+    <div>@Paytm AI Partner Hackathon 2026 — Idea Submission Template</div>
+    <div class="page-pill">2</div>
+  </div>
+</body>
+</html>

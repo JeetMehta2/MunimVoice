@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    color: #0F172A;
+    padding: 34px 60px 28px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .team-badge {
+    background: #EEF2FF;
+    border: 1.5px solid #6366F1;
+    border-radius: 28px;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1E1B4B;
+  }
+  .hackathon-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #002E6E;
+  }
+  .slide-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #002E6E;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .main-layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 26px;
+    flex: 1;
+  }
+  /* Tech Stack Column */
+  .stack-col {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .col-head {
+    font-size: 15px;
+    font-weight: 800;
+    color: #002E6E;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #002E6E;
+    padding-bottom: 6px;
+  }
+  .stack-card {
+    background: #FFF;
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid #00BAF2;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .stack-card.indigo { border-left-color: #6366F1; }
+  .stack-card.emerald { border-left-color: #10B981; }
+  .stack-card.amber { border-left-color: #F59E0B; }
+  .stack-card.rose { border-left-color: #F43F5E; }
+  .stack-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+  }
+  .stack-pills {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  /* Right Side: Top Pipeline + Bottom Comparison */
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pipeline-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .pipeline-header {
+    font-size: 14px;
+    font-weight: 800;
+    color: #002E6E;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: 280px 40px 1fr 40px 300px;
+    align-items: center;
+  }
+  .pipe-box {
+    background: #FFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .pipe-box.highlight {
+    background: #F0F9FF;
+    border: 2px solid #00BAF2;
+  }
+  .pipe-box.cyan {
+    background: #F0FDF4;
+    border: 2px solid #10B981;
+  }
+  .pipe-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #002E6E;
+    margin-bottom: 6px;
+  }
+  .pipe-items {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .pipe-arrow {
+    font-size: 24px;
+    font-weight: 900;
+    color: #64748B;
+    text-align: center;
+  }
+  .multi-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sub-track {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1E293B;
+  }
+  /* Bottom Split: Working Prototype Architecture + Infra Comparison */
+  .bottom-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    flex: 1;
+  }
+  .half-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .half-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #002E6E;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .arch-img-wrap {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #FFF;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+  }
+  .arch-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .infra-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    flex: 1;
+  }
+  .infra-col {
+    background: #FFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .infra-lbl {
+    font-size: 13px;
+    font-weight: 800;
+    color: #002E6E;
+    margin-bottom: 2px;
+  }
+  .infra-proto {
+    background: #EFF6FF;
+    border: 1.5px solid #BFDBFE;
+    border-radius: 6px;
+    padding: 8px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1E40AF;
+  }
+  .infra-arrow {
+    font-size: 16px;
+    font-weight: 900;
+    color: #00BAF2;
+  }
+  .infra-prod {
+    background: #ECFDF5;
+    border: 1.5px solid #A7F3D0;
+    border-radius: 6px;
+    padding: 8px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #065F46;
+  }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 700;
+  }
+  .page-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 14px;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="team-badge">Team Munim</div>
+    <div class="hackathon-title">PAYTM AI PARTNER HACKATHON 2026</div>
+  </div>
+
+  <div class="slide-title">TECHNICAL APPROACH: Deterministic Intelligence & Defense-in-Depth</div>
+
+  <div class="main-layout">
+    <!-- Left Column: Tech Stack -->
+    <div class="stack-col">
+      <div class="col-head">Core Technology Stack</div>
+      <div class="stack-card">
+        <div class="stack-name">Languages & Frameworks</div>
+        <div class="stack-pills">Python 3.12 | TypeScript | React 18 | FastAPI</div>
+      </div>
+      <div class="stack-card indigo">
+        <div class="stack-name">Analytics & Unsupervised ML</div>
+        <div class="stack-pills">scikit-learn | NumPy | GMM | Subset Solver</div>
+      </div>
+      <div class="stack-card emerald">
+        <div class="stack-name">Voice & Speech Engines</div>
+        <div class="stack-pills">Kokoro Neural TTS | Hinglish Voice/Text Parser</div>
+      </div>
+      <div class="stack-card amber">
+        <div class="stack-name">Database & State Machine</div>
+        <div class="stack-pills">SQLite (SQLModel) | Append-Only Audit Log</div>
+      </div>
+      <div class="stack-card rose">
+        <div class="stack-name">Safety & Token Guardrails</div>
+        <div class="stack-pills">Token-Locked Mock Adapters | Runtime Verification</div>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-col">
+      <!-- Pipeline -->
+      <div class="pipeline-card">
+        <div class="pipeline-header">THE PARALLEL REASONING & EXECUTION PIPELINE (DEFENSE-IN-DEPTH)</div>
+        <div class="pipeline-grid">
+          <div class="pipe-box">
+            <div class="pipe-title">01 Ingestion & Parsing</div>
+            <div class="pipe-items">
+              • Real-Time UPI Transaction Stream<br>
+              • Daily Voice / Typed Bahi-Khata Input<br>
+              • Schema Validation & Normalization
+            </div>
+          </div>
+          <div class="pipe-arrow">→</div>
+          <div class="pipe-box highlight">
+            <div class="pipe-title">02 Core Analytics Tracks</div>
+            <div class="multi-sub">
+              <div class="sub-track">Module 1: Item Inference (GMM & Combo Solver)</div>
+              <div class="sub-track">Module 2: Bahi-Khata (True Profit: UPI+Cash-Exp)</div>
+              <div class="sub-track">Module 3: Footfall Sensor (Volume Z-Scores)</div>
+              <div class="sub-track">Module 4: Munim Score (5-Factor Underwriting)</div>
+            </div>
+          </div>
+          <div class="pipe-arrow">→</div>
+          <div class="pipe-box cyan">
+            <div class="pipe-title">03 Risk Synthesis & Triage</div>
+            <div class="pipe-items">
+              • Decision Engine (Zero Math LLM)<br>
+              • Mobile Approval Card Gate<br>
+              • Single-Use Execution Token<br>
+              • Append-Only Audit Logging
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Split -->
+      <div class="bottom-split">
+        <div class="half-card">
+          <div class="half-title">Working Prototype Architecture</div>
+          <div class="arch-img-wrap">
+            <img src="file:///C:/Users/jeetm/.gemini/antigravity/scratch/munim/deck/assets/architecture_light.png" alt="Architecture Diagram">
+          </div>
+        </div>
+        <div class="half-card">
+          <div class="half-title">Prototype vs. Production Paytm Rails</div>
+          <div class="infra-grid">
+            <div class="infra-col">
+              <div class="infra-lbl">Compute/Host</div>
+              <div class="infra-proto">Local FastAPI<br>Async Server</div>
+              <div class="infra-arrow">↓</div>
+              <div class="infra-prod">Paytm Cloud<br>Microservices</div>
+            </div>
+            <div class="infra-col">
+              <div class="infra-lbl">Soundbox</div>
+              <div class="infra-proto">Simulated<br>WebSocket</div>
+              <div class="infra-arrow">↓</div>
+              <div class="infra-prod">Paytm 5G<br>Soundbox MQTT</div>
+            </div>
+            <div class="infra-col">
+              <div class="infra-lbl">Payment Feed</div>
+              <div class="infra-proto">Synthetic Seed<br>Stream (81k txns)</div>
+              <div class="infra-arrow">↓</div>
+              <div class="infra-prod">Live Paytm QR<br>Webhook Engine</div>
+            </div>
+            <div class="infra-col">
+              <div class="infra-lbl">Lending Signal</div>
+              <div class="infra-proto">Behavioral<br>Munim Score</div>
+              <div class="infra-arrow">↓</div>
+              <div class="infra-prod">Licensed NBFC<br>Partner API</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-footer">
+    <div>@Paytm AI Partner Hackathon 2026 — Idea Submission Template</div>
+    <div class="page-pill">3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    color: #0F172A;
+    padding: 34px 60px 28px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .team-badge {
+    background: #EEF2FF;
+    border: 1.5px solid #6366F1;
+    border-radius: 28px;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1E1B4B;
+  }
+  .hackathon-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #002E6E;
+  }
+  .slide-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #002E6E;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .main-layout {
+    display: grid;
+    grid-template-columns: 520px 620px 620px;
+    gap: 20px;
+    flex: 1;
+  }
+  .col-box {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .col-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #002E6E;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+  .col-badge {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 6px;
+  }
+  .col-h {
+    font-size: 16px;
+    font-weight: 800;
+    color: #002E6E;
+    text-transform: uppercase;
+  }
+  /* Col 1 Wheel */
+  .feas-wheel {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    position: relative;
+    padding: 6px;
+  }
+  .feas-center-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    background: #002E6E;
+    border: 3px solid #00BAF2;
+    box-shadow: 0 4px 14px rgba(0,46,110,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.25;
+    z-index: 10;
+  }
+  .feas-center-hub span {
+    color: #00BAF2;
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .feas-card {
+    background: #FFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .feas-card-h {
+    font-size: 13px;
+    font-weight: 800;
+    color: #002E6E;
+    margin-bottom: 4px;
+  }
+  .feas-card-d {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .result-banner {
+    background: #ECFDF5;
+    border: 2px solid #10B981;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 12px;
+  }
+  .result-h {
+    font-size: 13px;
+    font-weight: 800;
+    color: #065F46;
+    margin-bottom: 3px;
+  }
+  .result-d {
+    font-size: 12px;
+    color: #047857;
+    font-weight: 600;
+  }
+  /* Challenge & Mitigation Pairs */
+  .items-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .item-card {
+    background: #FFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  .item-card.danger {
+    border-left: 4px solid #EF4444;
+  }
+  .item-card.success {
+    border-left: 4px solid #10B981;
+    background: #F0FDF4;
+  }
+  .item-card-h {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .item-card-d {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .tag-danger {
+    font-size: 10px;
+    color: #EF4444;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .tag-success {
+    font-size: 10px;
+    color: #10B981;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 700;
+  }
+  .page-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 14px;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="team-badge">Team Munim</div>
+    <div class="hackathon-title">PAYTM AI PARTNER HACKATHON 2026</div>
+  </div>
+
+  <div class="slide-title">FEASIBILITY AND VIABILITY: Multi-Dimensional Readiness</div>
+
+  <div class="main-layout">
+    <!-- Col 1: Feasibility Analysis -->
+    <div class="col-box">
+      <div class="col-title-bar">
+        <div class="col-badge">01</div>
+        <div class="col-h">Feasibility Analysis</div>
+      </div>
+      <div class="feas-wheel">
+        <div class="feas-center-hub">
+          <span>READINESS</span>
+          FEASIBILITY<br>AT A GLANCE
+        </div>
+        <div class="feas-card">
+          <div class="feas-card-h">Hardware Readiness</div>
+          <div class="feas-card-d">Uses existing Soundbox speaker & merchant phone. Zero new counter hardware required.</div>
+        </div>
+        <div class="feas-card">
+          <div class="feas-card-h">Merchant Literacy</div>
+          <div class="feas-card-d">Spoken Hinglish voice briefs; no spreadsheet or accounting knowledge needed.</div>
+        </div>
+        <div class="feas-card">
+          <div class="feas-card-h">Economic Viability</div>
+          <div class="feas-card-d">Lightweight Python analytics; low cloud compute cost per active merchant.</div>
+        </div>
+        <div class="feas-card">
+          <div class="feas-card-h">Trust & Control</div>
+          <div class="feas-card-d">100% human-in-the-loop; nothing executes without merchant tapping "Approve".</div>
+        </div>
+      </div>
+      <div class="result-banner">
+        <div class="result-h">THE RESULT</div>
+        <div class="result-d">A low-friction, high-adoption business partner built natively for informal, non-tech-savvy micro-merchants.</div>
+      </div>
+    </div>
+
+    <!-- Col 2: Challenges -->
+    <div class="col-box">
+      <div class="col-title-bar">
+        <div class="col-badge" style="background: #EF4444;">02</div>
+        <div class="col-h">Critical Field Challenges</div>
+      </div>
+      <div class="items-stack">
+        <div class="item-card danger">
+          <div class="item-card-h">Street Noise & Chatter <span class="tag-danger">Acoustic Limit</span></div>
+          <div class="item-card-d">High ambient street and stall chatter makes continuous on-device mic wake-word listening unreliable.</div>
+        </div>
+        <div class="item-card danger">
+          <div class="item-card-h">Unrecorded Cash & Expenses <span class="tag-danger">Data Blindspot</span></div>
+          <div class="item-card-d">UPI records digital revenue, but informal vendor cash payouts (milk, gas) remain completely off-book.</div>
+        </div>
+        <div class="item-card danger">
+          <div class="item-card-h">Price-Point Collisions <span class="tag-danger">Inference Limit</span></div>
+          <div class="item-card-d">Multiple distinct items sharing the same price (e.g. ₹10 Chai vs ₹10 Parle-G Biscuit) confuse raw clustering.</div>
+        </div>
+        <div class="item-card danger">
+          <div class="item-card-h">LLM Arithmetic Hallucinations <span class="tag-danger">Trust Hazard</span></div>
+          <div class="item-card-d">General-purpose LLMs hallucinate calculations, percentages, and cash balances when doing inline math.</div>
+        </div>
+        <div class="item-card danger">
+          <div class="item-card-h">Social Awkwardness with Debtors <span class="tag-danger">Behavioral Trap</span></div>
+          <div class="item-card-d">Merchants hesitate to manually call familiar neighbors for overdue udhaar due to social discomfort.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 3: Mitigations -->
+    <div class="col-box">
+      <div class="col-title-bar">
+        <div class="col-badge" style="background: #10B981;">03</div>
+        <div class="col-h">Tested Mitigations</div>
+      </div>
+      <div class="items-stack">
+        <div class="item-card success">
+          <div class="item-card-h">Output-Only Soundbox Architecture <span class="tag-success">Hardware Safe</span></div>
+          <div class="item-card-d">Soundbox acts strictly as an audio speaker directing to phone; speech/typing input is isolated to mobile.</div>
+        </div>
+        <div class="item-card success">
+          <div class="item-card-h">30-Second Bahi-Khata Ritual <span class="tag-success">Zero Friction</span></div>
+          <div class="item-card-d">Quick evening spoken/typed Hindi ritual reconciles cash expenses instantly with UPI for True Daily Profit.</div>
+        </div>
+        <div class="item-card success">
+          <div class="item-card-h">Combinatorial Priors + Confirm Chips <span class="tag-success">Human-in-Loop</span></div>
+          <div class="item-card-d">Maps price clusters to ranked trade priors; merchant confirms candidate hypotheses with a single tap.</div>
+        </div>
+        <div class="item-card success">
+          <div class="item-card-h">Zero Arithmetic in LLM <span class="tag-success">0 Math Errors</span></div>
+          <div class="item-card-d">LLM is restricted to intent classification; 100% of profit, margin, and scores computed deterministically in Python.</div>
+        </div>
+        <div class="item-card success">
+          <div class="item-card-h">Tone-Controlled WhatsApp Drafts <span class="tag-success">Respectful</span></div>
+          <div class="item-card-d">Merchants select Polite, Formal, or Firm reminder tones; links dispatched only upon explicit approval.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-footer">
+    <div>@Paytm AI Partner Hackathon 2026 — Idea Submission Template</div>
+    <div class="page-pill">4</div>
+  </div>
+</body>
+</html>

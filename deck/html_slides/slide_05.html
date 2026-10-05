@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    color: #0F172A;
+    padding: 34px 60px 28px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .team-badge {
+    background: #EEF2FF;
+    border: 1.5px solid #6366F1;
+    border-radius: 28px;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1E1B4B;
+  }
+  .hackathon-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #002E6E;
+  }
+  .slide-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #002E6E;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  /* Top Half: Audience Impact Hub + Solution Benefits */
+  .top-half {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 16px;
+  }
+  .section-h {
+    font-size: 16px;
+    font-weight: 800;
+    color: #002E6E;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  /* Hub */
+  .hub-container {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .hub-card {
+    background: #FFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .hub-card.center {
+    grid-column: span 2;
+    background: #F0F9FF;
+    border: 2px solid #00BAF2;
+    text-align: center;
+  }
+  .hub-card-h {
+    font-size: 13px;
+    font-weight: 800;
+    color: #002E6E;
+    margin-bottom: 2px;
+  }
+  .hub-card-d {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  /* Benefits */
+  .benefits-container {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .benefit-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .benefit-pill {
+    width: 140px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .benefit-pill.green { background: #10B981; }
+  .benefit-pill.blue { background: #0284C7; }
+  .benefit-pill.amber { background: #F59E0B; }
+  .benefit-pill.purple { background: #7C3AED; }
+  .benefit-text {
+    flex: 1;
+    background: #FFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E293B;
+  }
+  /* Bottom Table: Paradigm Shift */
+  .table-container {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .comp-table th {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .comp-table th:first-child { border-top-left-radius: 8px; }
+  .comp-table th:last-child { border-top-right-radius: 8px; }
+  .comp-table td {
+    padding: 9px 14px;
+    font-size: 12px;
+    border-bottom: 1px solid #E2E8F0;
+    background: #FFF;
+  }
+  .comp-table tr:nth-child(even) td {
+    background: #F8FAFC;
+  }
+  .bad-txt {
+    color: #EF4444;
+    font-weight: 700;
+  }
+  .good-txt {
+    color: #065F46;
+    font-weight: 700;
+  }
+  .arrow-td {
+    text-align: center;
+    color: #94A3B8;
+    font-weight: 900;
+  }
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 700;
+  }
+  .page-pill {
+    background: #002E6E;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 14px;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="team-badge">Team Munim</div>
+    <div class="hackathon-title">PAYTM AI PARTNER HACKATHON 2026</div>
+  </div>
+
+  <div class="slide-title">IMPACT AND BENEFITS: Ecosystem Paradigm Shift</div>
+
+  <div class="top-half">
+    <!-- Audience Impact -->
+    <div>
+      <div class="section-h">Audience & Ecosystem Impact</div>
+      <div class="hub-container">
+        <div class="hub-card center">
+          <div class="hub-card-h" style="font-size: 15px; color: #002E6E;">MUNIM AI BUSINESS PARTNER</div>
+          <div class="hub-card-d">Autonomous Closed-Loop Operating Engine for Paytm Merchants</div>
+        </div>
+        <div class="hub-card">
+          <div class="hub-card-h">Micro-Merchants</div>
+          <div class="hub-card-d">True daily profit transparency, cash leak elimination, and 1-tap debt recovery.</div>
+        </div>
+        <div class="hub-card">
+          <div class="hub-card-h">Paytm Soundbox</div>
+          <div class="hub-card-d">Transforms payment speaker into an essential, proactive business advisor.</div>
+        </div>
+        <div class="hub-card">
+          <div class="hub-card-h">Paytm Payments</div>
+          <div class="hub-card-d">Drives daily merchant app engagement and increases QR stickiness.</div>
+        </div>
+        <div class="hub-card">
+          <div class="hub-card-h">Paytm Lending Partners</div>
+          <div class="hub-card-d">Alternative behavioral cashflow data asset to enrich licensed underwriting.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution Benefits -->
+    <div>
+      <div class="section-h">Measurable Solution Benefits</div>
+      <div class="benefits-container">
+        <div class="benefit-row">
+          <div class="benefit-pill green">Financial</div>
+          <div class="benefit-text">✓ Eliminates ~15% unrecorded cash leakage and recovers frozen udhaar capital.</div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-pill blue">Operational</div>
+          <div class="benefit-text">✓ 30-minute advance footfall surge alerts for tea/snack inventory preparation.</div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-pill amber">Margin Safety</div>
+          <div class="benefit-text">✓ "Don't Act" prudence suppresses discount offers during peak lunch rush.</div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-pill purple">Inclusion</div>
+          <div class="benefit-text">✓ Builds an operational credit signal for micro-merchants without POS barcode systems.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Table: Paradigm Shift -->
+  <div class="table-container">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Traditional Tools (Khata / Excel / SMS)</th>
+          <th style="width: 40px;"></th>
+          <th>Proposed Munim AI Platform</th>
+          <th>AI Engine / Implementation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Data Ingestion</b></td>
+          <td><span class="bad-txt">✗ Manual evening paper entry</span></td>
+          <td class="arrow-td">→</td>
+          <td><span class="good-txt">✓ Real-time UPI streaming + Voice Khata</span></td>
+          <td>Simulated MQTT / Webhook & Hinglish Voice Parser</td>
+        </tr>
+        <tr>
+          <td><b>Menu Discovery</b></td>
+          <td><span class="bad-txt">✗ Demands expensive barcode POS</span></td>
+          <td class="arrow-td">→</td>
+          <td><span class="good-txt">✓ Zero POS hardware required</span></td>
+          <td>Unsupervised price-point clustering & combinatorial solver</td>
+        </tr>
+        <tr>
+          <td><b>Profit Visibility</b></td>
+          <td><span class="bad-txt">✗ Bank balance mistaken for profit</span></td>
+          <td class="arrow-td">→</td>
+          <td><span class="good-txt">✓ True Net Profit (UPI + Cash - Expense)</span></td>
+          <td>Deterministic Python arithmetic (0 math errors in 50 QA)</td>
+        </tr>
+        <tr>
+          <td><b>Proactive Alerts</b></td>
+          <td><span class="bad-txt">✗ Reactive end-of-month statements</span></td>
+          <td class="arrow-td">→</td>
+          <td><span class="good-txt">✓ Ambient Soundbox voice announcements</span></td>
+          <td>Hourly footfall volume Z-score analytics & TTS audio</td>
+        </tr>
+        <tr>
+          <td><b>Debt Recovery</b></td>
+          <td><span class="bad-txt">✗ Awkward, confrontational phone calls</span></td>
+          <td class="arrow-td">→</td>
+          <td><span class="good-txt">✓ 1-tap polite WhatsApp payment links</span></td>
+          <td>Tone-controlled message drafts with merchant consent gate</td>
+        </tr>
+        <tr>
+          <td><b>Underwriting Signal</b></td>
+          <td><span class="bad-txt">✗ Informal merchants rejected (no GST)</span></td>
+          <td class="arrow-td">→</td>
+          <td><span class="good-txt">✓ 5-factor behavioral Munim Score</span></td>
+          <td>Volume consistency, expense discipline & stability index</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bottom-footer">
+    <div>@Paytm AI Partner Hackathon 2026 — Idea Submission Template</div>
+    <div class="page-pill">5</div>
+  </div>
+</body>
+</html>

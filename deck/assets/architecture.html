@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: #001838; color: #FFFFFF; width: 1200px; height: 675px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+  
+  .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00BAF2; padding-bottom: 12px; margin-bottom: 20px; }
+  .header h1 { font-size: 26px; font-weight: 800; color: #FFFFFF; }
+  .header h1 span { color: #00BAF2; }
+  .header .badge { background: rgba(0, 186, 242, 0.15); border: 1px solid #00BAF2; color: #00BAF2; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px; }
+
+  .grid-container { display: grid; grid-template-columns: 280px 1fr 280px; gap: 16px; flex: 1; }
+
+  .column { display: flex; flex-direction: column; gap: 14px; }
+
+  .card { background: #00224D; border: 1px solid #0E4482; border-radius: 12px; padding: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .card-title.cyan { color: #00BAF2; }
+  .card-title.amber { color: #F59E0B; }
+  .card-title.emerald { color: #10B981; }
+  .card-title.rose { color: #F43F5E; }
+
+  .item-list { font-size: 11px; line-height: 1.5; color: #CBD5E1; }
+  .item-list li { margin-left: 14px; margin-bottom: 4px; }
+  .highlight { color: #FFFFFF; font-weight: 600; }
+  .tag { display: inline-block; font-size: 9px; padding: 1px 5px; border-radius: 4px; font-weight: 700; vertical-align: middle; margin-left: 4px; }
+  .tag-sim { background: rgba(245, 158, 11, 0.2); color: #F59E0B; border: 1px solid #F59E0B; }
+  .tag-real { background: rgba(16, 185, 129, 0.2); color: #10B981; border: 1px solid #10B981; }
+  .tag-lock { background: rgba(244, 63, 94, 0.2); color: #F43F5E; border: 1px solid #F43F5E; }
+
+  .core-box { background: #002E6E; border: 2px solid #00BAF2; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+  .core-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .core-item { background: #001F4D; border: 1px solid #1A5499; border-radius: 8px; padding: 10px; font-size: 11px; }
+  .core-item-title { font-weight: 700; color: #00BAF2; margin-bottom: 4px; font-size: 11px; }
+
+  .bottom-bar { background: #00132C; border: 1px solid #1E293B; border-radius: 8px; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #94A3B8; margin-top: 12px; }
+  .security-pill { color: #10B981; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Munim <span>System Architecture</span></h1>
+  <div class="badge">Zero-Arithmetic LLM • Ground-Truth Isolation • Token-Locked Adapters</div>
+</div>
+
+<div class="grid-container">
+  <!-- Left: Channels -->
+  <div class="column">
+    <div class="card" style="border-left: 4px solid #00BAF2;">
+      <div class="card-title cyan">🔊 Soundbox 5G <span class="tag tag-sim">Simulated</span></div>
+      <ul class="item-list">
+        <li><span class="highlight">Output-Only</span> Speaker Device</li>
+        <li>Neural Hinglish TTS Audio</li>
+        <li>Dynamic Pulsing Waves Animation</li>
+        <li>Decision Prompt: <em>"Phone pe approve karein"</em></li>
+        <li>No microphone or input buttons</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-left: 4px solid #10B981;">
+      <div class="card-title emerald">📱 Mobile App View <span class="tag tag-real">Interactive</span></div>
+      <ul class="item-list">
+        <li>Daily True Profit (UPI + Cash - Expense)</li>
+        <li>Voice Bahi-Khata (Colloquial Hindi)</li>
+        <li>Bayesian Prior Confirmation Chips</li>
+        <li>Tier 2 Campaign Approval Cards</li>
+        <li>Munim Score Credit Signal Band</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-left: 4px solid #38BDF8;">
+      <div class="card-title cyan">⚡ Gateway & WebSocket</div>
+      <ul class="item-list">
+        <li>FastAPI Asynchronous Backend</li>
+        <li>WebSocket Hub (Instant Soundbox Sync)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Center: Deterministic Intelligence Core -->
+  <div class="column">
+    <div class="core-box">
+      <div>
+        <div class="card-title cyan" style="font-size: 14px;">🧠 Deterministic Intelligence Core (Zero Hallucination)</div>
+        <p style="font-size: 11px; color: #94A3B8; margin-bottom: 8px;">All numbers, profit margins, and opportunity rankings computed strictly in Python.</p>
+      </div>
+
+      <div class="core-grid">
+        <div class="core-item">
+          <div class="core-item-title">Item Inference Engine</div>
+          <p class="item-list">GMM clustering & combinatorial subset decomposition. F1 = 1.0 on menu clusters without POS.</p>
+        </div>
+        <div class="core-item">
+          <div class="core-item-title">Footfall Sensor</div>
+          <p class="item-list">Hourly volume Z-scores. Triggers instant rush prep warnings & quiet-slot lull alerts.</p>
+        </div>
+        <div class="core-item">
+          <div class="core-item-title">Opportunity Engine</div>
+          <p class="item-list">6 planted detectors + External dip filter (rain/cricket match $	o$ "Don't Discount" guard).</p>
+        </div>
+        <div class="core-item">
+          <div class="core-item-title">Voice & Bahi-Khata</div>
+          <p class="item-list">Colloquial Hindi number parser (90% acc). 3-tone Hinglish Udhaar reminders (Soft/Firm/Funny).</p>
+        </div>
+        <div class="core-item">
+          <div class="core-item-title">Munim Score Engine</div>
+          <p class="item-list">5 weighted factors (Consistency, Growth, Repeats, Recovery, Discipline) $	o$ 300-900 signal.</p>
+        </div>
+        <div class="core-item">
+          <div class="core-item-title">Counterfactual Uplift</div>
+          <p class="item-list">80/20 customer holdout simulator. Measures true incremental sales vs baseline.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 4px solid #F43F5E;">
+      <div class="card-title rose">🛡️ Autonomous Guardrails & Security Gateway</div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: #CBD5E1;">
+        <div><strong>Tier 0:</strong> Read / Analytics (Auto)</div>
+        <div><strong>Tier 1:</strong> Drafts (Auto)</div>
+        <div><strong style="color: #F43F5E;">Tier 2:</strong> Money / Messaging (Approval Required)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Isolation & Storage -->
+  <div class="column">
+    <div class="card" style="border-left: 4px solid #F43F5E;">
+      <div class="card-title rose">🔒 Token-Locked Adapters <span class="tag tag-lock">No Bypass</span></div>
+      <ul class="item-list">
+        <li><strong>Single-use Runtime Token</strong> held exclusively by GuardrailService</li>
+        <li>Direct tool calls throw <code>PermissionError</code></li>
+        <li>Idempotency Key deduplication</li>
+        <li>Immutable append-only Audit Log</li>
+        <li>Mock Soundbox, Mock UPI, Mock SMS</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-left: 4px solid #10B981;">
+      <div class="card-title emerald">🗄️ Main DB (munim.db)</div>
+      <ul class="item-list">
+        <li>81,273 UPI Transactions (9 months)</li>
+        <li>Cash logs, Expenses, Udhaar records</li>
+        <li>Merchant profiles & campaign states</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-left: 4px solid #E11D48; background: #2A0815;">
+      <div class="card-title rose">🛑 Ground Truth DB (ground_truth.db)</div>
+      <ul class="item-list">
+        <li><code>menu_items_truth</code> isolated in separate DB</li>
+        <li><strong>Zero AST/import leakage:</strong> audited by static tests</li>
+        <li>Zero LLM access permitted</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div>🔒 <span class="security-pill">Audit Enforced</span>: Every action verified by automated AST static scanner and runtime isolation tests.</div>
+  <div>Munim AI Architecture • Built for Paytm Hackathon</div>
+</div>
+
+</body>
+</html>

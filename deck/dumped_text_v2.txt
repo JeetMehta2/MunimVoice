@@ -1,0 +1,177 @@
+--- SLIDE 1 ---
+PAYTM AI PARTNER HACKATHON 2026
+Munim
+Voice-First AI Business Partner for Small Indian Merchants
+Autonomous Merchant Intelligence
+- Understands UPI payment streams, reconstructs menus without POS hardware, and automates daily profit calculations.
+- Announces proactive opportunities on Soundbox and executes verified actions only after explicit mobile approval.
+Target Merchant Persona
+- Ramesh, Chai and Snacks Stall, Jaipur.
+- 150+ daily micro UPI transactions.
+- Informal cash sales and supplier credits.
+Delivery Channels
+- Simulated 4G Soundbox: audio announcements.
+- Mobile Web App: one-tap approval cards.
+- Direction: 'Phone pe approve kar dijiye'.
+Enforced Safety Contract
+- 0 numeric errors on our 50-question test set.
+- Single-use runtime token for all adapters.
+- Append-only audit log for every execution.
+Team: (to be added)  |  Paytm AI Partner Hackathon 2026  |  Prototype Status: Fully Functional on Synthetic Seed Data
+
+--- SLIDE 2 ---
+MERCHANT REALITY & PAIN POINTS
+The Small Merchant Dilemma: High Volume, Zero Visibility
+Ramesh (Chai Stall, Jaipur) processes 150+ UPI payments daily, yet operates completely blind.
+1. Invisible Margin Leak
+- UPI captures top-line revenue, but cash collections and daily vendor expenses go unrecorded.
+- True daily net profit remains unknown until bank balance runs short.
+- Illustrative: ~15% estimated monthly profit leak from unrecorded informal cash costs.
+2. Unrecovered Customer Udhaar
+- Informal customer credits accumulate on scattered paper slips without structured tracking.
+- Merchants avoid awkward manual collection calls with familiar regular customers.
+- Illustrative: ~Rs 4,200 average monthly working capital frozen in unpaid udhaar.
+3. Reactive Operations
+- Without POS barcode systems, merchants cannot identify top-selling item combos.
+- Zero advance preparation for predictable rush surges and afternoon quiet lulls.
+- Marketing and combo discounts are never run due to setup friction and lack of time.
+The Fundamental Gap
+- Existing digital ledger apps only record transactions. Munim actively understands, recommends, and acts.
+
+--- SLIDE 3 ---
+PRODUCT ARCHITECTURE & OPERATING LOOP
+Munim: Closing the Autonomous Business Loop
+Transforming raw UPI stream events into executed, revenue-generating decisions.
+1. UNDERSTAND
+- Infers menu items and combo baskets directly from UPI payment amount clusters without POS.
+2. RECOMMEND
+- Detects rush-hour footfall surges, slow quiet periods, and aging customer credit balances.
+3. ACT
+- Announces voice briefs on Soundbox and delivers one-tap approval cards to merchant phone.
+4. MEASURE
+- Tracks sales uplift, customer settlement rate, and working capital gains against pre-action baselines.
+
+--- SLIDE 4 ---
+SYSTEM ARCHITECTURE & ISOLATION
+Deterministic Intelligence with Token-Enforced Safety
+LLM provides Hinglish dialogue orchestration; analytics and adapter execution are strictly isolated.
+Zero LLM Arithmetic
+- All financial sums, margins, and scores calculated deterministically in Python.
+- 0 numeric errors on our 50-question test set.
+Mandatory Merchant Approval
+- No external adapter can fire without explicit confirmation on mobile screen.
+- Soundbox audio prompts: 'Phone pe approve kar dijiye'.
+Runtime Token Lock
+- Single-use runtime token generated per execution.
+- Direct adapter calls without token raise PermissionError (tested).
+
+--- SLIDE 5 ---
+CORE AI INNOVATION
+Item Inference: Menu Discovery from UPI Streams
+Reconstructing catalog and combo baskets from anonymous payment frequencies without POS hardware.
+Evaluation Benchmarks on Synthetic Data
+- Easy Baseline (4 distinct price points): Precision 1.0, Recall 1.0, F1 1.0.
+- Hard Stress Test (7 items, 2 price collisions, combos, noise, sparse item): Precision 0.50, Recall 0.71, F1 0.59, Top-1 Accuracy 0.57.
+3-Stage Inference Methodology
+- 1. Price-Point Clustering: Extracts modal transaction amounts from raw stream.
+- 2. Domain Priors: Maps clusters to trade items and 2-item combo equations.
+- 3. Bayesian Confirmation: Merchant confirms candidate hypotheses via UI chips.
+Practical Merchant Benefit
+- Delivers enterprise-grade SKU and basket analysis to street stalls without requiring barcode scanners.
+
+--- SLIDE 6 ---
+FINANCIAL HEALTH & BOOKKEEPING
+Unified Bahi-Khata: True Daily Profit & Udhaar Recovery
+Bridging digital UPI receipts, informal cash expenses, and automated customer credit management.
+Deterministic True Daily Profit
+- Daily True Profit = UPI Inflow + Cash Inflow - Daily Cash Expenses.
+- Input via voice transcript or typed text (e.g. 'Doodh 500 aur cheeni 200 cash di').
+- 27 of 30 Hinglish test phrases accurately parsed in benchmark.
+Udhaar Tracking with Tone Selection
+- Tracks customer balances, aging days, and repayment probability.
+- Merchant selects reminder tone for each customer: Polite, Formal, or Firm.
+- Pre-drafts personalized Hinglish collection messages with payment links.
+Consent-Gated Execution
+- Reminders dispatched via mock WhatsApp adapter only after merchant approves.
+- All dispatched collection attempts recorded in append-only audit log.
+
+--- SLIDE 7 ---
+DEVICE INTERACTION & DECISION LOGIC
+Simulated Soundbox: Proactive Edge Intelligence
+Real-time audio announcements in the stall, with safe decision controls on the merchant mobile screen.
+Output-Only Soundbox Architecture
+- Simulated 4G Soundbox plays neural Hinglish TTS audio announcements.
+- Directs merchant to smartphone: 'Phone pe approve kar dijiye'.
+- No microphone or decision buttons on device, preserving hardware simplicity.
+Proactive Store Triggers
+- Morning Brief: Daily sales target, yesterday net profit, and stock alerts.
+- Rush Warning: Footfall volume Z-score alert 30 minutes before peak lunch rush.
+The 'Don't Act' Prudence Example
+- Munim evaluates running a promotional combo offer during peak rush hours.
+- Decision engine explicitly suppresses campaign: discounts during peak hours erode gross margin without adding kitchen capacity.
+
+--- SLIDE 8 ---
+FINANCIAL INCLUSION & LENDING SIGNAL
+Munim Score: Behavioral Underwriting Enrichment
+A real-time operational discipline score designed to enrich Paytm's licensed lending underwriting.
+5 Behavioral Health Dimensions (0-100)
+- 1. Volume Consistency: Daily transaction stability across weeks.
+- 2. Expense Discipline: Daily logging of cash outflows and supplier costs.
+- 3. Repayment Regularity: Velocity of supplier and vendor settlements.
+- 4. Udhaar Health: Ratio of active customer credits to recovered dues.
+- 5. Operational Stability: Regular trading hours and business consistency.
+Enrichment Signal, Not Credit Decision
+- A behavioral signal that could enrich Paytm's existing, licensed underwriting.
+- Not a formal credit decision or loan offer; contains no pre-approved limits.
+In-App Disclaimer Enforced
+- Visible in mobile UI: 'Munim Score is a behavioral management indicator and does not constitute a formal loan offer or statutory credit rating.'
+
+--- SLIDE 9 ---
+DEMONSTRATION SCENARIO & PROOF POINTS
+A Day in the Life of Ramesh: 5-Act Demonstration
+Complete user journey executed end-to-end on seeded synthetic data in 3 minutes.
+Act 1: Morning Brief
+- 08:00 AM.
+- Soundbox plays TTS morning briefing.
+- Announces daily revenue goal and yesterday's net cash profit.
+- Suggests milk stocking based on inferred volume.
+Act 2: Rush Warning
+- 12:30 PM.
+- Footfall surge detected (+2.8 sigma over baseline).
+- Soundbox alerts stall owner to prep chai and snacks.
+- System suppresses discounts to protect margin.
+Act 3: Bahi-Khata
+- 04:30 PM.
+- Ramesh submits daily cash expense via voice transcript or typed text.
+- Munim parses Hindi expense entries.
+- Real-time true net profit updated instantly.
+Act 4: Udhaar Action
+- 06:00 PM.
+- Overdue udhaar flagged for frequent customer.
+- Approval card appears on mobile screen.
+- Ramesh taps 'Approve'; mock WhatsApp reminder dispatched.
+Act 5: Measure Uplift
+- 09:00 PM.
+- Evaluates Tuesday combo campaign.
+- Result: +21.4% revenue (Illustrative in simulation).
+- Munim Score recalculates with updated expense discipline.
+
+--- SLIDE 10 ---
+SUMMARY & NEXT STEPS
+Measured Impact, Strategic Value & Immediate Roadmap
+A production-ready blueprint built specifically for the Paytm merchant ecosystem.
+Measured Prototype Results
+- Benchmarked across 81,273 synthetic transactions across 6 merchant profiles.
+- 0 numeric errors on 50-question Hinglish benchmark.
+- 27 of 30 test phrases accurately parsed for cash expenses and udhaar.
+- Item Inference: Easy case F1: 1.0 | Hard stress test F1: 0.59.
+- Append-only audit log records every decision and approval timestamp.
+Strategic Value to Paytm
+- Soundbox Retention: Transforms audio payment confirmation into an essential business partner.
+- Active Daily Engagement: Merchants interact with Paytm app daily for bahi-khata and approvals.
+- Underwriting Advantage: Unique behavioral data asset to enrich licensed merchant loan underwriting.
+Immediate Roadmap
+- 1. Live Browser WebSpeech Mic: Add direct in-browser microphone capture to supplement typed text.
+- 2. Multi-Regional Language TTS: Expand neural audio support to Tamil, Telugu, Marathi, and Bengali.
+- Architecture ready for live Paytm Merchant SDK integration.
+Team: (to be added)  |  Paytm AI Partner Hackathon 2026  |  Source Repository: Munim Prototype
